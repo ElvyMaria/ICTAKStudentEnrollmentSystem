@@ -186,7 +186,7 @@ public class AdminHome extends DriverUtility{
 
 			String empname = employeelist.getText();
 
-			String expectedname = "employee1";
+			String expectedname = empNmae;
 			if (empname.equalsIgnoreCase(expectedname)) {
 				WebElement approvalbtn = driver.findElement(By.xpath(
 						"//body/app-root[1]/app-employeeapproval[1]/div[1]/ul[" + i + "]/li[1]/div[2]/button[1]"));
@@ -268,8 +268,8 @@ public class AdminHome extends DriverUtility{
 			if (empname.equalsIgnoreCase(expectedname)) {
 				WebElement deletebtn = driver.findElement(
 						By.xpath("//body/app-root[1]/app-employees[1]/div[1]/ul[" + i + "]/li[1]/div[2]/button[2]"));
-				String editemp = deletebtn.getText();
-				//System.out.println(editemp);
+				String deletemp = deletebtn.getText();
+				//System.out.println(deletemp);
 				deletebtn.click();
 				break;
 			}
