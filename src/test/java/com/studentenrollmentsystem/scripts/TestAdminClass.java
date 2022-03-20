@@ -1,4 +1,4 @@
-/* TestAdminAddCourseClass
+/* TestAdminClass
 Created By Dhannya M
 Purpose:Validate the Admin Add Course Functionality
 */
