@@ -3,3 +3,4 @@ output/
 target/
 test-output/
 .settings/
+.metadata/
