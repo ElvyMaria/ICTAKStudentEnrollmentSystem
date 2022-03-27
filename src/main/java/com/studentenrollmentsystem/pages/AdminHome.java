@@ -258,7 +258,8 @@ public class AdminHome extends DriverUtility{
 	
 	public void employeeDelete(String empName) {
 
-		int n = driver.findElements(By.xpath("//body/app-root[1]/app-employees[1]/div[1]/ul")).size();
+		///html/body/app-root/app-employees/div/ul[1]/li/div[2]/button[2]
+		int n = driver.findElements(By.xpath("/html/body/app-root/app-employees/div/ul")).size();
 		for (int i = 1; i < n; i++) {
 			WebElement employeelist = driver.findElement(
 					By.xpath("//body/app-root[1]/app-employees[1]/div[1]/ul[" + i + "]/li[1]/div[1]/h3[1]"));
