@@ -19,10 +19,11 @@
 
 
 			<class name="com.studentenrollmentsystem.scripts.TestLoginClass" />
-			<class name="com.studentenrollmentsystem.scripts.TestHomeClass" />
+			
 			<class name="com.studentenrollmentsystem.scripts.TestEmployeeSignUpClass" />
 			<class name="com.studentenrollmentsystem.scripts.TestAdminHomeClass" />
 			<class name="com.studentenrollmentsystem.scripts.TestAdminClass" />
+			<class name="com.studentenrollmentsystem.scripts.TestHomeClass" />
 			<!--test
 			<class name="com.studentenrollmentsystem.scripts.TestEnrollClass" />
 			<class name="com.studentenrollmentsystem.scripts.TestStudentProfileUpdateClass" />
