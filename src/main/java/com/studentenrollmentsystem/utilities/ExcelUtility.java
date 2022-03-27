@@ -7,15 +7,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import org.apache.commons.exec.util.StringUtils;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.util.StringUtil;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtility {
 
-	private static XSSFWorkbook excelWBook; // Excel WorkBook 
+	private static XSSFWorkbook excelWBook; // Excel WorkBook
 	private static XSSFSheet excelWSheet; // Excel Sheet // This method has two parameters:
+
 	public static ArrayList<Object> getRowData(String sheetName) {
 
 		try
@@ -62,10 +66,8 @@ public class ExcelUtility {
 					}
 
 				}
-				// System.out.println(ar);
-				// break;
+
 				return list;
-				// break;
 
 			}
 
@@ -75,54 +77,48 @@ public class ExcelUtility {
 		return null;
 	}
 
-	
-
-	
 	public static ArrayList<Object> getExcelData(String sheetName, int colNo) throws IOException {
 
 		// Open the Excel file
 		FileInputStream ExcelFile = new FileInputStream(
-		System.getProperty("user.dir") + "/src/main/resources" + "/TestData.xlsx");
-		
+				System.getProperty("user.dir") + "/src/main/resources" + "/TestData.xlsx");
+
 		excelWBook = new XSSFWorkbook(ExcelFile);
-		XSSFSheet excelWSheet= excelWBook.getSheet(sheetName); 
-		
-	    Iterator <Row> rowIterator = excelWSheet.iterator();
-	    
-	    rowIterator.next();//To avoid First row;
-	    
-	    ArrayList <Object> list= new ArrayList<Object>();
-	    
-	    while(rowIterator.hasNext())
-	    {
-	    	
-	    	Cell cell = rowIterator.next().getCell(colNo);
-//	    	if(!cell.equals(null)) {
-		    	switch (cell.getCellType())               
-		    	{  
-		    	
-		    	case STRING:    //field that represents string cell type  
-		    	  
-		    	list.add(cell.getStringCellValue());
-		    	break;  
-		    	
-		    	case NUMERIC:    //field that represents number cell type  
-	
-		        double data = cell.getNumericCellValue();
-		    	int value = (int)data;
-		    	list.add(value);
-		        
-		    	break;  
-		    	default:  
-		    		
-		    	}  
-//	    	}
-	    }
-	    
-	    return list;
+		XSSFSheet excelWSheet = excelWBook.getSheet(sheetName);
+
+		Iterator<Row> rowIterator = excelWSheet.iterator();
+
+		rowIterator.next();// To avoid First row;
+
+		ArrayList<Object> list = new ArrayList<Object>();
+
+		while (rowIterator.hasNext()) {
+
+			Cell cell = rowIterator.next().getCell(colNo);
+			if (cell != null && cell.getCellType() != CellType.BLANK) {
+				switch (cell.getCellType()) {
+
+				case STRING: // field that represents string cell type
+
+					list.add(cell.getStringCellValue());
+					break;
+
+				case NUMERIC: // field that represents number cell type
+
+					double data = cell.getNumericCellValue();
+					int value = (int) data;
+					list.add(value);
+
+					break;
+				default:
+					break;
+				}
+			} else {
+				break;
+			}
+		}
+
+		return list;
 	}
-
-
-
 
 }

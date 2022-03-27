@@ -43,4 +43,6 @@ public class AutomationConstants {
     public static final String ADMINCOURSES ="http://64.227.182.128/courses";
     public static final String ADMINEDITEMPLOYEEURL= "http://64.227.182.128/update-employee";
     public static final String ADMINEMPLOYEESURL= "http://64.227.182.128/employees";
+    
+    public static final String EMPLOYEEPASSWORDERROR="Password should have one Uppercase, one Lowecase and one number and atleast 8 characters";
 }

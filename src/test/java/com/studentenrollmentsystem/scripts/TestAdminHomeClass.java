@@ -26,7 +26,7 @@ public class TestAdminHomeClass extends DriverUtility{
 	
 	//Login function for Admin 
 	
-	@Test(priority = 6)
+	@Test(priority = 7,  description="Validate admin Login with valid data")
 	public void verifyValidAdminLogin() throws IOException {
 		objHome = new HomePage();
 		objLogin = new LoginPage();
@@ -59,9 +59,9 @@ public class TestAdminHomeClass extends DriverUtility{
 
 	}
 
-	// Function to see the Employee details in admin page
+
 	
-	@Test(priority = 7)
+	@Test(priority =8, description="Validate see the  Employee details in admin page ")
 	public void empList() throws InterruptedException {
 	objLogin = new LoginPage();
 	objAdhome =new AdminHome();
@@ -75,8 +75,8 @@ public class TestAdminHomeClass extends DriverUtility{
 	}
 	
 	
-	// Function to Approve Employee in admin page
-		@Test(priority = 8)
+	
+		@Test(priority = 9, description="Validate  Approve Employee in admin page" )
 		public void employeeApprove() throws InterruptedException, IOException {
 			
 			ArrayList<Object> result = new ArrayList<Object>();
@@ -89,7 +89,7 @@ public class TestAdminHomeClass extends DriverUtility{
 			objAdhome.employee_app();
 			PageUtility.scrollPageDown(driver);
 			objAdhome.approveEmployee(result.get(0).toString());
-			
+		
 			try {
 				String expectedAlert = AutomationConstants.ADMINAPPROVE;
 				String actualAlert = objLogin.getAlertText();
@@ -102,8 +102,8 @@ public class TestAdminHomeClass extends DriverUtility{
 			}
 			
 			}
-		// Function to Reject Employee in admin page
-	@Test(priority = 9)
+		
+	@Test(priority =10, description="Validate  Reject Employee in admin page")
 	public void employeeReject() throws InterruptedException, IOException {
 		
 			ArrayList<Object> result = new ArrayList<Object>();
@@ -129,9 +129,8 @@ public class TestAdminHomeClass extends DriverUtility{
 		}
 		
 		}
-	   
-	// Function to Edit Employee details in admin page
-	@Test(priority = 10)
+	  
+	@Test(priority = 11,description="Validate  Edit Employee details in admin page")
 	public void employeeEdit() throws InterruptedException, IOException {
 		
 		
@@ -163,8 +162,8 @@ public class TestAdminHomeClass extends DriverUtility{
 		Assert.assertEquals(actualURL2,expectedURl2);
 		
 		}
-	// Function to Approve Employee in admin page
-			@Test(priority=11, enabled = false)
+
+			@Test(priority=12, enabled = true,description="Validate Delete Employee details in admin page" )
 			public void employeeDelete() throws InterruptedException, IOException {
 				
 				ArrayList<Object> result = new ArrayList<Object>();
@@ -194,7 +193,7 @@ public class TestAdminHomeClass extends DriverUtility{
 				
 				}
        
-	@Test(priority = 12)
+	@Test(priority = 13, description ="Validate admin logout")
 	public void validateAdminLogOut() {
 		objAdhome= new AdminHome();
 		objAdhome.logOut();

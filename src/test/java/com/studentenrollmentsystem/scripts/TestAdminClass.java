@@ -1,5 +1,6 @@
-/* TestAdminClass
-Created By Dhannya M
+
+/* TestAdminAddCourseClass
+
 Purpose:Validate the Admin Add Course Functionality
 */
 
@@ -13,7 +14,6 @@ import org.testng.annotations.Test;
 import com.studentenrollmentsystem.constants.AutomationConstants;
 import com.studentenrollmentsystem.pages.AdminHome;
 import com.studentenrollmentsystem.pages.AdminPage;
-import com.studentenrollmentsystem.pages.EmployeePage;
 import com.studentenrollmentsystem.pages.HomePage;
 import com.studentenrollmentsystem.pages.LoginPage;
 import com.studentenrollmentsystem.utilities.DriverUtility;
@@ -28,9 +28,8 @@ public class TestAdminClass extends DriverUtility {
 	PageUtility objPage ;
 	AdminHome objAdHome;
 
-	//Login function for Admin 
 	
-	@Test(priority = 13)
+	@Test(priority = 14 ,description ="validate Login function for Admin")
 	public void verifyValidAdminLogin() throws IOException {
 		
 		objLogin =new LoginPage(); 
@@ -64,9 +63,9 @@ public class TestAdminClass extends DriverUtility {
 
 	}
 
-	//Function to reset a course in admin page
+
 	
-	@Test(priority = 14)
+	@Test(priority = 15,description ="validate reset a course in admin page")
 	public void validateResetCourse() throws IOException, InterruptedException {
 
 		objLogin = new LoginPage();
@@ -95,9 +94,9 @@ public class TestAdminClass extends DriverUtility {
 		
 	}
 	
-	//Function to add a course in admin page
+	
 
-	@Test(priority = 15)
+	@Test(priority = 16 , description ="validate add a course in admin page")
 	public void validateAddCourse() throws IOException, InterruptedException {
 
 		objLogin = new LoginPage();
@@ -148,7 +147,7 @@ public class TestAdminClass extends DriverUtility {
 
 	}
 	
-	@Test(priority =16)
+	@Test(priority =17, description ="validate  edit a course in admin page")
 	public void verifyEditCourse() throws IOException, InterruptedException {
 
 		objLogin = new LoginPage();
@@ -179,10 +178,10 @@ public class TestAdminClass extends DriverUtility {
 		
 	}
 
-	// Function to verify Know more about a course in admin page
+	
 
-	//@Test(dependsOnMethods = { "verifyValidAdminLogin" })
-	@Test(priority =17, enabled = false)
+	
+	@Test(priority =18, enabled = false ,description ="validate Know more about a course in admin pag")
 	public void verifyKnowMore() throws IOException, InterruptedException {
 
 		objLogin = new LoginPage();

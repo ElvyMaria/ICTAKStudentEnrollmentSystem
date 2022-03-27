@@ -52,7 +52,19 @@ public class EmployeePage extends DriverUtility{
 
 	@FindBy(xpath = "/html/body/app-root/app-mark-entry/div/form/div/div[5]/button")
 	private WebElement update;
-
+	
+	//Error msg
+	///html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[2]/app-empregister[1]/div[1]/div[1]/form[1]/div[1]/div[3]/span[1]
+    //
+	
+	@FindBy(xpath = "//span[contains(text(),'Email is not valid')]")
+	private WebElement emailmsg;
+	
+	
+	
+	@FindBy(xpath = "//span[contains(text(),'Password should have one Uppercase, one Lowecase a')]")
+	private WebElement pwdmsg;
+	
 	public void clickAllStudents() {
 		this.allstudents.click();
 	}
@@ -141,6 +153,16 @@ public class EmployeePage extends DriverUtility{
 
 		this.register.click();
 
+	}
+	
+	public String getEmailmsg() {
+		String emsg=this.emailmsg.getText();
+		return emsg;
+	}
+	
+	public String getPasswordmsg() {
+		String pdsg=this.pwdmsg.getText();
+		return pdsg;
 	}
 
 }
