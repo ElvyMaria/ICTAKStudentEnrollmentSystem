@@ -1,11 +1,11 @@
 /* TestEnrollClass :
-Created By Elvy Maria Joseph
+
 Created On :27/02/2022
 Purpose: validate the student registration functionality
 It includes:
-1.validateRegisterAsStudent :Validate Register as New Student button redirection
-2.validateEnroll :Validate the student registration with valid data from the login page
-3.validateInvalidEnroll: Validate the student registration with invalid data from the login page
+1.validateRegisterAsStudent 
+2.validateEnroll 
+3.validateInvalidEnroll
 */
 
 package com.studentenrollmentsystem.scripts;
@@ -31,7 +31,7 @@ public class TestEnrollClass extends DriverUtility {
 
 	// Login function for Student
 
-	@Test(priority = 23)
+	@Test(priority = 23,description=" :Validate Register as New Student button redirection")
 	public void validateRegisterAsStudent() throws IOException {
 
 		objHome = new HomePage();
@@ -49,7 +49,7 @@ public class TestEnrollClass extends DriverUtility {
 
 	// Function to validate Enroll a course in Student page
 
-	@Test(priority = 24)
+	@Test(priority = 24,description=" :Validate the student registration with valid data from the login page")
 	public void validateEnroll() throws IOException {
 
 		objHome = new HomePage();
@@ -119,7 +119,7 @@ public class TestEnrollClass extends DriverUtility {
 
 	// Function to Check InValidate Enroll in Student page
 
-	@Test(priority = 25, enabled = true)
+	@Test(priority = 25, enabled = true,description=" Validate the student registration with invalid data from the login page")
 	public void validateInvalidEnroll() throws IOException {
 
 		objHome = new HomePage();

@@ -1,10 +1,9 @@
 /*TestStudentProfileUpdateClass 
-Created By Elvy Maria Joseph
 Created On :01/03/2022
 Purpose: validate the Registered student profile update functionality
 It includes:
-1.validteStudentLogin -Validate the login Functionality of Student
-2.validateUpdateStudentProfile -Validate the Update profile functionality of the registered student
+1.validteStudentLogin 
+2.validateUpdateStudentProfile 
 */
 
 package com.studentenrollmentsystem.scripts;
@@ -33,7 +32,7 @@ public class TestStudentProfileUpdateClass extends DriverUtility {
 
 	// Login function for Student
 
-	@Test(priority = 26)
+	@Test(priority = 26 ,description = "Validate the login Functionality of Student")
 	public void validteStudentLogin() throws IOException {
 
 		objHome = new HomePage();
@@ -68,7 +67,7 @@ public class TestStudentProfileUpdateClass extends DriverUtility {
 
 	}
 
-	@Test(priority = 27)
+	@Test(priority = 27 , description ="Validate the Update profile functionality of the registered student")
 
 	// Function to validate Update StudentProfile from student page
 

@@ -13,9 +13,8 @@ public class TestHomeClass extends DriverUtility {
 	
 	HomePage objHome;
 	
-	// Validate Home Link
 	
-	@Test(priority=18 )
+	@Test(priority=19,description=" Validate Home Link" )
 	public void validateHomeLink() throws IOException {
 		objHome = new HomePage();
 		objHome.clickHome();
@@ -36,7 +35,7 @@ public class TestHomeClass extends DriverUtility {
 	}
 	
 	//
-	@Test(priority=19 )
+	@Test(priority=20 ,description=" Validate ShowMoreButton in Home Page")
 	public void validateShowMoreButton() throws IOException, InterruptedException {
 		
 		objHome = new HomePage();
@@ -49,7 +48,7 @@ public class TestHomeClass extends DriverUtility {
 		
 	}
 	
-	@Test(priority =20 )
+	@Test(priority =21 ,description=" Validate CourseLink in Home Page")
 	public void validateCourseLink() throws IOException  {
 		
 		objHome = new HomePage();
@@ -61,7 +60,7 @@ public class TestHomeClass extends DriverUtility {
 		
 	}
 	
-	@Test(priority = 21)
+	@Test(priority = 22,description=" Validate Login Button in Home Page")
 	public void validateLoginButton() throws IOException, InterruptedException {
 		objHome = new HomePage();
 		Thread.sleep(1000);
@@ -72,7 +71,7 @@ public class TestHomeClass extends DriverUtility {
 		Assert.assertEquals(actualURL,expectedURL);
 		
 	}
-	@Test(priority = 22)
+	@Test(priority = 23,description=" Validate KnowMore Button in Home Page")
 	public void validateKnowMoreButton() throws IOException{
 		
 		objHome = new HomePage();

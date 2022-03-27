@@ -22,10 +22,56 @@ public class TestEmployeeSignUpClass extends DriverUtility{
 		LoginPage objLogin;
 		EmployeePage objEmp;
 		
-		//Registration function for Employee 
+        @Test(priority =5, description="Validate Employee SignUp with Invalid data")
+		
+        public void validateEmployeeSignUpInvalid() throws IOException {
+			
+			
+			objHome = new HomePage();
+			objLogin = new LoginPage();
+			//objEmp =new EmployeePage();
 
-        @Test(priority = 5, enabled = true)
-		public void validtionofEmployeeSignUp() throws IOException {
+			// Get Data From Excel
+			ArrayList<Object> data = new ArrayList<Object>();
+			//Check
+			data = ExcelUtility.getExcelData("Employees", 4);
+			System.out.println(data);
+			
+	
+		
+				objEmp =new EmployeePage();
+				
+				System.out.println(data.get(0).toString());
+				
+				objHome.clickLogin();
+
+				objLogin.clickRegisterAsNewEmployee();
+
+				
+				objEmp.setName(data.get(0).toString());
+
+				objEmp.setEmail(data.get(1).toString());
+
+				objEmp.setPassword(data.get(2).toString());
+
+				objEmp.setRole(data.get(3).toString());
+
+				objEmp.clickRegister();
+
+				String expectedEmailErrorMessage = AutomationConstants.STDEMAILERRORMESSAGE;
+				String actualEmailErrorMessage = objEmp.getEmailmsg();
+				Assert.assertEquals(actualEmailErrorMessage, expectedEmailErrorMessage);
+
+				String expectedPasswordErrorMessage1 = AutomationConstants.EMPLOYEEPASSWORDERROR;
+				String actualPasswordErrorMessage1 = objEmp.getPasswordmsg();
+				Assert.assertEquals(actualPasswordErrorMessage1, expectedPasswordErrorMessage1);
+
+				
+			   
+			}
+
+        @Test(priority = 6, enabled = true,description="Validate Employee SignUp with valid data")
+		public void validtionOfEmployeeSignUp() throws IOException {
 
 			objHome = new HomePage();
 			objLogin = new LoginPage();
@@ -70,8 +116,12 @@ public class TestEmployeeSignUpClass extends DriverUtility{
 			    Assert.assertEquals(expectedUrl1, actualUrl1);	
 			}
 		}
-
-    
+		
+		
+			
 		}
+    
+
+
 
 

@@ -1,6 +1,5 @@
+
 package com.studentenrollmentsystem.scripts;
-
-
 	import java.io.IOException;
     import java.util.ArrayList;
 
@@ -20,10 +19,7 @@ import com.studentenrollmentsystem.utilities.ExcelUtility;
 		HomePage objHome;
 		LoginPage objLogin;
 
-		// To validate the Login functionality of Admin with Invalid password 
-
-
-		@Test(priority = 0)
+		@Test(priority = 0,description ="validate the Login functionality of Admin with Invalid password")
 		public void verifyInValidAdminLoginPassword() throws IOException {
 			objHome = new HomePage();
 			objLogin = new LoginPage();
@@ -57,9 +53,9 @@ import com.studentenrollmentsystem.utilities.ExcelUtility;
 
 		}
 
-		// To validate the Login functionality with Invalid User
+		
 
-		@Test(priority = 1, enabled = true)
+		@Test(priority = 1, enabled = true ,description ="validate the Login functionality with Invalid User")
 		public void validtionofInValidUserLogin() throws IOException {
 
 			objHome = new HomePage();
@@ -103,9 +99,9 @@ import com.studentenrollmentsystem.utilities.ExcelUtility;
 			}
 		}
 		
-		// To validate the Login functionality of Student with Invalid password 
+		 
 		
-		@Test(priority = 2, enabled=false)
+		@Test(priority = 2, enabled=false, description="validate the Login functionality of Student with Invalid password")
 		public void verifyInValidStudentLoginPassword() throws IOException {
 			objHome = new HomePage();
 			objLogin = new LoginPage();
@@ -140,10 +136,10 @@ import com.studentenrollmentsystem.utilities.ExcelUtility;
 
 		}
 		
-		// To validate the Login functionality of Employee with Invalid password   
+	   
 		
 		
-		@Test(priority = 3)
+		@Test(priority = 3, description ="validate the Login functionality of Employee with Invalid password")
 		public void verifyInValidEmployeeLoginPassword() throws IOException {
 			objHome = new HomePage();
 			objLogin = new LoginPage();
@@ -177,9 +173,9 @@ import com.studentenrollmentsystem.utilities.ExcelUtility;
 
 		}
 		
-		 //Login function for Employee
+		
 
-		@Test(priority = 4)
+		@Test(priority = 4, description ="Validate Login function for Employee")
 		public void verifyValidEmployeeLogin() throws IOException {
 			objHome = new HomePage();
 			objLogin = new LoginPage();

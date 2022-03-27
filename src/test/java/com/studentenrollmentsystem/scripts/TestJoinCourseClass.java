@@ -1,5 +1,5 @@
 /*TestJoinCourseClass
-Created By Elvy Maria Joseph
+
 Created On :02/03/2022
 
 Purpose: validate the student registration functionality 
@@ -30,9 +30,9 @@ public class TestJoinCourseClass extends DriverUtility{
 	 PageUtility objPage;
 	 LoginPage objLogin;
 	 
-	//Function to validate joining  a course through home page
+
 	 
-	 @Test(priority =28)
+	 @Test(priority =28, description ="Function to validate joining  a course through home page")
 	 public void ValidateJoinCourse() throws InterruptedException, IOException  {
 		 
 		 objHome = new HomePage(); 

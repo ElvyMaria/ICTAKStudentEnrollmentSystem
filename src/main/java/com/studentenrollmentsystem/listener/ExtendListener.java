@@ -1,6 +1,4 @@
 /*ExtentListner 
-Created By Elvy Maria Joseph 
-Reference :Naveen Automation Labs
 Use for extent report generation. It implements the IReporter Interface
 */
 
